@@ -13,7 +13,7 @@ A quiz contain with 10 general knowledge qustions.
    * Single character or less than 3 character name denied.
    * Colorful interface with Emoji.
    * Chance of playing again before ending the quiz.
-   * Scoreboard after finish the quiz depends on user wish.
+   * Scoreboard after finish the quiz depends on users wish.
    * Saving scoredata in file after finish the quiz. 
    * Clapping sound available.
    
