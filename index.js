@@ -90,25 +90,23 @@ if(username.length>=3)
       }
       else
       { 
+        try{
         //saving score section
-        fs.appendFile('score.txt','\n'+username+"==>"+score,   // saving score data
-            // callback function that is called after writing file is done
-            function(err) { 
-                if (err) throw err;
-                // if no error
-                console.log("Data saved")
-        });
+        fs.appendFileSync('score.txt','\n'+username+"==>"+score);   // saving score data
+        console.log("data saved");
+        }
+        catch(err){
+          console.log(err);
+        }   
 
         //read score board section
         var scoreboard=readlineSync.question(color.bold.brightCyan(emoji.get('koala')," Do u wanna see scoreboard?y/n\n")); 
         if(scoreboard.toLowerCase()=="y")
         {
-          fs.readFile('score.txt', function (err, data) {  //reading scoreboard
-            if (err) {
-                return console.error(err);
-            }
-            console.log(color.brightGreen("Reading data: " + data.toString()));
-          });
+         var read_data= fs.readFileSync('score.txt');//reading scoreboard
+            
+            console.log(color.brightGreen("Reading data: " + read_data.toString()));
+          
         }
         else if(scoreboard.toLowerCase()=="n")
         {
