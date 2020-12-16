@@ -1,6 +1,6 @@
 var readlineSync= require('readline-sync');  
 const color = require('colors');    //color module
-const audio = require('@replit/audio');
+//const audio = require('@replit/audio');
 var fs=require('fs');    //file module
 var vm2=require('./question.js'); 
 var emoji=require('node-emoji')
@@ -28,13 +28,22 @@ if(username.length>=3)
 
       console.log(emoji.get('koala'),color.bold.brightYellow(" Total score",score));   //last score
       console.log(color.bold.brightYellow(" Thanks for participation\n")); //last line
-
+/*
       //audio   
       (async () => {
         const source = await audio.playFile({filePath: './c.mp3'});
         await delay(10000); 
       })();
+      */
 
+      /* trying to fix async call in above
+      async function song(){
+        const source = await audio.playFile({filePath: './c.mp3'});
+         //await delay(10000); 
+      } 
+      
+      song();
+*/
    
       //medals and appreciation section
       function expression(score)
